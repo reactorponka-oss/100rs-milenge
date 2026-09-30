@@ -1,6 +1,6 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes, ConversationHandler
-from config import ADMIN_ID
+from config import ADMIN_IDS
 from database import (
     get_settings, update_settings,
     add_button, get_all_buttons, get_button,
@@ -20,7 +20,7 @@ from database import (
 
 
 def is_admin(uid):
-    return uid == ADMIN_ID
+    return uid in ADMIN_IDS
 
 
 def main_menu_kb():
